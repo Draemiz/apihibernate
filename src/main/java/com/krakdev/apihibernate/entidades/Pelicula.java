@@ -29,13 +29,16 @@ public class Pelicula {
 
 	@Column(nullable = false)
 	private boolean disponible;
+	
+	@Column(nullable = false)
+	private double calificacion;
 
 	public Pelicula() {
 
 	}
 
 	public Pelicula(Long id, String nombre, String director, String genero, int duracion,
-			boolean disponible) {
+			boolean disponible, double calificacion) {
 
 		this.id = id;
 		this.nombre = nombre;
@@ -43,10 +46,21 @@ public class Pelicula {
 		this.genero = genero;
 		this.duracion = duracion;
 		this.disponible = disponible;
+		this.calificacion = calificacion;
 	}
 
 	public Long getId() {
 		return id;
+	}
+	
+	
+
+	public double getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(double calificacion) {
+		this.calificacion = calificacion;
 	}
 
 	public void setId(Long id) {
@@ -97,6 +111,6 @@ public class Pelicula {
 	public String toString() {
 		return "Pelicula [id=" + id + ", nombre=" + nombre + ", director="
 				+ director + ", genero=" + genero + ", duracion=" + duracion
-				+ ", disponible=" + disponible + "]";
+				+ ", disponible=" + disponible + calificacion + "]";
 	}
 }
